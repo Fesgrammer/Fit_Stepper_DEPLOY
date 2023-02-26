@@ -1,0 +1,37 @@
+version: "3"
+services:
+  db:
+    build: mysql
+    container_name: fit-db
+    ports:
+      - "3306:3306"
+    networks:
+      - fitsnet
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+  app:
+    build: app
+    container_name: fit-app
+    networks:
+      - fitsnet
+    environment:
+      DATASOURCE: jdbc:mysql://db:3306/plsdb
+    depends_on:
+      - db
+  web:
+    build: nginx
+    container_name: fit-web-server
+    ports:
+      - "8080:80"
+    networks:
+      - fitsnet
+    volumes:
+      - ./nginx/src:/usr/share/nginx/html
+    depends_on:
+      - app
+    environment:
+      APP_SERVER: http://app:8080
+networks:
+  fitsnet:
+    driver: bridge
