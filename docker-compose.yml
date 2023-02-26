@@ -16,7 +16,7 @@ services:
     networks:
       - fitsnet
     environment:
-      DATASOURCE: jdbc:mysql://db:3306/plsdb
+      DATASOURCE: jdbc:mysql://db:3306/fit_stepper
     depends_on:
       - db
   web:
