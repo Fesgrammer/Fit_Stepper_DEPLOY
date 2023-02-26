@@ -1,4 +1,4 @@
-create databases fit_stepper;
+create database fit_stepper;
 use fit_stepper;
 
 create user fitstepperapi identified by 'fsapi9301';
