@@ -1,5 +1,5 @@
 FROM mysql:8.0.30-debian
-ENV MYSQL_ROOT_PASSWORD plsuser
+ENV MYSQL_ROOT_PASSWORD fitstepper0019
 
 COPY ./my.conf /etc/mysql/conf.d/my.cnf
 
