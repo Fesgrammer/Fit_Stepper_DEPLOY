@@ -10,3 +10,7 @@
 6. 初回起動時はDBへの初期登録の都合上、必ずappサーバが停止する。そのため、Docker Desktopのダッシュボードを開いて、  
 　　fit_stepper_deployのアプリケーションの、fit-appを再鼓動（起動ボタンを押す）する。
 7. 正常に起動したら、ブラウザでlocalhost:8080/にアクセスする。
+
+# 実装（ソースファイル）について
+フロントエンド（Vue）：  
+バックエンド（Spring）：https://github.com/Fesgrammer/Fit_Stepper_BACK  
